@@ -1,11 +1,11 @@
 version: v1.0
-name: Test MyApp
+name: Test Pipleine
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Test
+  - name: Set Up
     task:
       jobs:
         - name: Test
@@ -20,7 +20,7 @@ blocks:
     dependencies: []
   - name: Unit Tests
     dependencies:
-      - Test
+      - Set Up
     task:
       prologue:
         commands:
